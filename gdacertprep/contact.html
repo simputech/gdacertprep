@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | GDACertPrep</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">GDA<span>Cert</span>Prep</a>
+      <ul class="nav-links"><li><a href="blog/index.html">Study Blog</a></li><li><a href="quiz/index.html">Practice Quiz</a></li><li><a href="study-guide/index.html">Study Guide</a></li></ul>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <nav class="nav-mobile"><a href="index.html">Home</a><a href="blog/index.html">Blog</a></nav>
+</header>
+<section class="page-hero"><div class="container"><h1>Contact Us</h1><p>Questions, feedback, or refund requests — we respond within 48 hours.</p></div></section>
+<section class="section">
+  <div class="container-narrow">
+    <div class="card" style="max-width:520px; margin:0 auto;">
+      <div class="card-body" style="padding: 40px;">
+        <h2 style="margin-bottom:24px;">Get in Touch</h2>
+        <div id="contact-success" style="display:none; background:var(--teal-lt); border-radius:8px; padding:20px; text-align:center;">
+          <p style="color:var(--teal-dk); font-weight:700; font-size:1.05rem;">Message sent! We'll respond within 48 hours.</p>
+        </div>
+        <form id="contact-form">
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:5px;">Your Name</label>
+          <input type="text" placeholder="Jane Smith" required style="width:100%;padding:13px 16px;border:2px solid var(--light-gray);border-radius:6px;font-family:var(--font-b);font-size:1rem;margin-bottom:14px;outline:none;" />
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:5px;">Email</label>
+          <input type="email" placeholder="jane@email.com" required style="width:100%;padding:13px 16px;border:2px solid var(--light-gray);border-radius:6px;font-family:var(--font-b);font-size:1rem;margin-bottom:14px;outline:none;" />
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:5px;">Message</label>
+          <textarea rows="5" style="width:100%;padding:13px 16px;border:2px solid var(--light-gray);border-radius:6px;font-family:var(--font-b);font-size:1rem;margin-bottom:20px;outline:none;resize:vertical;"></textarea>
+          <button type="submit" class="btn" style="width:100%;font-size:1rem;padding:15px;">Send Message</button>
+        </form>
+        <p style="text-align:center;margin-top:16px;font-size:.85rem;color:var(--gray);">Or email: <a href="mailto:hello@gdacertprep.com">hello@gdacertprep.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer"><div class="container"><div class="footer-bottom" style="border-top:none;padding-top:0;"><p>© 2025 GDACertPrep.com</p></div></div></footer>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('contact-success').style.display = 'block';
+});
+</script>
+</body>
+</html>

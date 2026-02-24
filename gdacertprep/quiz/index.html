@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Google Data Analytics Practice Quiz — 25 Questions | GDACertPrep</title>
+  <meta name="description" content="Test your readiness with 25 real exam-style questions covering SQL, spreadsheets, data cleaning, visualization, and more. Get your results emailed with a personalized study guide." />
+  <link rel="canonical" href="https://gdacertprep.com/quiz/" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="../index.html" class="nav-logo">GDA<span>Cert</span>Prep</a>
+      <ul class="nav-links">
+        <li><a href="../blog/index.html">Study Blog</a></li>
+        <li><a href="../quiz/index.html">Practice Quiz</a></li>
+        <li><a href="../study-guide/index.html">Study Guide</a></li>
+        <li><a href="../study-guide/index.html" class="btn btn-sm btn-gold">Get Study Guide — $29</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <nav class="nav-mobile">
+    <a href="../index.html">Home</a>
+    <a href="../blog/index.html">Study Blog</a>
+    <a href="../study-guide/index.html">Study Guide</a>
+    <a href="../study-guide/index.html" class="btn btn-gold">Get Study Guide — $29</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> Practice Quiz</div>
+    <h1>Google Data Analytics Practice Quiz</h1>
+    <p>25 exam-style questions covering every key topic. Enter your email at the end to receive your score, topic breakdown, and a personalized study guide — free.</p>
+  </div>
+</section>
+
+<!-- AD SLOT -->
+<div class="container" style="padding-top: 32px;">
+  <div class="ad-slot ad-slot-leaderboard">Advertisement</div>
+</div>
+
+<!-- QUIZ SECTION -->
+<section class="section">
+  <div class="container">
+
+    <!-- INTRO CARD -->
+    <div style="background: var(--teal-lt); border-radius: 12px; padding: 28px; max-width: 740px; margin: 0 auto 40px; display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+      <div style="font-size: 2rem;">📋</div>
+      <div style="flex: 1;">
+        <h3 style="margin-bottom: 6px;">Before You Begin</h3>
+        <p style="margin: 0; font-size: 0.93rem; color: var(--gray);">This quiz covers: SQL · Spreadsheets · Data Cleaning · Visualization · Data Types · Career Skills. Each question has a detailed explanation. At the end, enter your email to receive your full results and a personalized study plan based on your weak areas.</p>
+      </div>
+    </div>
+
+    <!-- QUIZ WIDGET -->
+    <div id="quiz-wrapper">
+
+      <!-- MAIN QUIZ -->
+      <div class="quiz-container" id="quiz-main">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress" style="width: 0%"></div>
+        </div>
+        <div class="quiz-header">
+          <div class="quiz-counter" id="quiz-counter">Question 1 of 25</div>
+          <h2 id="quiz-question">Loading question...</h2>
+        </div>
+        <div class="quiz-body">
+          <div class="quiz-options" id="quiz-options"></div>
+          <div class="quiz-explanation" id="quiz-explanation"></div>
+          <div class="quiz-footer">
+            <span class="quiz-score-display" id="quiz-score-display">Score: 0/0</span>
+            <button class="btn" id="quiz-next" style="display:none;">Next Question →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS (hidden until quiz complete) -->
+      <div class="quiz-container" id="quiz-results" style="display:none;">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width: 100%"></div></div>
+        <div class="quiz-results">
+          <span class="badge">Quiz Complete!</span>
+          <h2 style="margin-top: 10px;">Here Are Your Results</h2>
+
+          <div class="quiz-score-circle" id="score-circle" style="--pct: 0%;">
+            <div class="quiz-score-inner">
+              <span class="quiz-score-pct" id="result-pct">0%</span>
+              <span class="quiz-score-label">Score</span>
+            </div>
+          </div>
+
+          <p style="font-size: 1.1rem; font-weight: 600; color: var(--navy);">
+            You scored <span id="result-score">0</span> out of <span id="result-total">25</span>
+          </p>
+          <p id="result-message" style="color: var(--gray); max-width: 480px; margin: 10px auto 20px; font-size: 0.95rem;"></p>
+
+          <div id="weak-topics" style="margin-bottom: 28px;"></div>
+
+          <div style="background: linear-gradient(135deg, var(--navy), #0d3a60); border-radius: 14px; padding: 32px; text-align: center; color: var(--white); max-width: 520px; margin: 0 auto 32px;">
+            <div style="font-size: 1.5rem; margin-bottom: 10px;">📬</div>
+            <h3 style="color: var(--white); margin-bottom: 8px;">Get Your Personalized Study Guide</h3>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 20px;">We'll email you your full quiz results, a breakdown of each topic, and a custom study plan targeting your weakest areas — completely free.</p>
+            <form class="quiz-email-form" id="email-results-form">
+              <input type="text" id="result-name" placeholder="Your first name" required />
+              <input type="email" id="result-email" placeholder="Your email address" required />
+              <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 1rem; padding: 15px;">
+                Email Me My Results + Study Guide →
+              </button>
+            </form>
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 10px;">No spam. We'll also send you a free weekly study tip.</p>
+          </div>
+
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a href="../study-guide/index.html" class="btn btn-gold">Get the Full Study Guide — $29 →</a>
+            <button class="btn btn-outline" onclick="location.reload()">Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /quiz-wrapper -->
+
+    <!-- AD BELOW QUIZ -->
+    <div style="text-align: center; margin-top: 48px;">
+      <div class="ad-slot ad-slot-rectangle" style="margin: 0 auto;">Advertisement</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STUDY GUIDE CTA -->
+<section style="background: var(--off-wh); padding: 64px 0;">
+  <div class="container text-center">
+    <h2>Want to Score Higher Next Time?</h2>
+    <p style="color: var(--gray); max-width: 520px; margin: 12px auto 28px;">The GDACertPrep Complete Study Guide covers every topic tested in this quiz — in depth, with practice questions and full explanations.</p>
+    <a href="../study-guide/index.html" class="btn btn-gold btn-lg">Get the Study Guide — $29</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+      <p>© 2025 GDACertPrep.com · Not affiliated with Google or Coursera.</p>
+      <div style="display:flex;gap:20px;">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

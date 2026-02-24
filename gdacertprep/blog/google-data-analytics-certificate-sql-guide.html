@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Practice Guide for the Google Data Analytics Certificate | GDACertPrep</title>
+  <meta name="description" content="Every SQL concept covered in the Google Data Analytics Certificate — with practice queries, explanations, and common exam mistakes to avoid." />
+  <link rel="canonical" href="https://gdacertprep.com/blog/google-data-analytics-certificate-sql-guide.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Google Ads slot -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="../index.html" class="nav-logo">GDA<span>Cert</span>Prep</a>
+      <ul class="nav-links">
+        <li><a href="../blog/index.html">Study Blog</a></li>
+        <li><a href="../quiz/index.html">Practice Quiz</a></li>
+        <li><a href="../study-guide/index.html">Study Guide</a></li>
+        <li><a href="../study-guide/index.html" class="btn btn-sm btn-gold">Study Guide — $29</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <nav class="nav-mobile">
+    <a href="../index.html">Home</a>
+    <a href="../blog/index.html">Study Blog</a>
+    <a href="../quiz/index.html">Practice Quiz</a>
+    <a href="../study-guide/index.html" class="btn btn-gold">Study Guide — $29</a>
+  </nav>
+</header>
+
+<section class="blog-post-header">
+  <div class="container-narrow">
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="index.html">Blog</a> <span>›</span> SQL</div>
+    <h1>SQL Practice Guide for the Google Data Analytics Certificate</h1>
+    <div class="blog-post-meta">
+      <span>📅 Updated 2025</span>
+      <span>⏱ 14 min read</span>
+      <span>📂 SQL</span>
+    </div>
+  </div>
+</section>
+
+<section class="post-content">
+  <div class="container">
+    <div class="post-layout">
+
+      <!-- MAIN CONTENT -->
+      <article class="post-body">
+
+        <!-- AD SLOT TOP OF POST -->
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+        <div class="ad-slot ad-slot-leaderboard" style="margin-bottom: 32px;">Advertisement</div>
+
+        <p class="fade-up" style="font-size:1.1rem; font-weight:300; color:#4a5a6a; border-left:4px solid var(--teal); padding-left:18px; margin-bottom:32px;">SQL is the backbone of the Google Data Analytics Certificate — and it's where most learners struggle the most. The good news: the SQL you need for the certificate is well-defined. This guide covers every concept you'll encounter, with practice queries you can run yourself and clear explanations of the things that trip people up.</p>
+
+        <h2 id="sql-concepts-tested-in-the-gda-certificate">SQL Concepts Tested in the GDA Certificate</h2>
+<p>The certificate focuses on core SQL operations rather than advanced database theory. Here are the key areas:</p>
+<p><strong>SELECT and filtering:</strong> SELECT, FROM, WHERE, AND/OR, BETWEEN, LIKE, IS NULL / IS NOT NULL</p>
+<p><strong>Sorting and limiting:</strong> ORDER BY (ASC/DESC), LIMIT</p>
+<p><strong>Aggregations:</strong> COUNT(), SUM(), AVG(), MIN(), MAX(), GROUP BY, HAVING</p>
+<p><strong>Joins:</strong> INNER JOIN, LEFT JOIN, RIGHT JOIN (basic understanding)</p>
+<p><strong>Subqueries:</strong> Basic nested SELECT statements</p>
+<p><strong>Data manipulation:</strong> DISTINCT, TRIM(), LENGTH(), UPPER()/LOWER(), CAST()</p>
+<h2 id="practice-basic-select-queries">Practice: Basic SELECT Queries</h2>
+<p>Start with the fundamentals. Every SQL query begins with SELECT and FROM.</p>
+<div class="highlight-box">
+<pre style="font-family: monospace; font-size: 0.9rem; margin:0;">
+-- Select all columns from a table
+SELECT * FROM sales_data;
+
+-- Select specific columns
+SELECT customer_id, order_total, order_date
+FROM sales_data;
+
+-- Filter with WHERE
+SELECT * FROM sales_data
+WHERE order_total > 100;
+
+-- Filter with multiple conditions
+SELECT * FROM sales_data
+WHERE order_total > 100
+  AND region = 'North';
+</pre>
+</div>
+<h2 id="practice-aggregations-and-group-by">Practice: Aggregations and GROUP BY</h2>
+<p>Aggregation queries are heavily tested. Know how to combine GROUP BY with aggregate functions and when to use HAVING vs. WHERE.</p>
+<div class="highlight-box">
+<pre style="font-family: monospace; font-size: 0.9rem; margin:0;">
+-- Count orders per region
+SELECT region, COUNT(*) AS order_count
+FROM sales_data
+GROUP BY region;
+
+-- Sum of sales per product category
+SELECT category, SUM(revenue) AS total_revenue
+FROM sales_data
+GROUP BY category
+ORDER BY total_revenue DESC;
+
+-- HAVING: filter after aggregation
+SELECT region, AVG(order_total) AS avg_order
+FROM sales_data
+GROUP BY region
+HAVING AVG(order_total) > 75;
+</pre>
+</div>
+<p>Remember: WHERE filters rows before aggregation. HAVING filters groups after aggregation. This distinction is a common exam question.</p>
+<h2 id="practice-joins">Practice: JOINs</h2>
+<p>The GDA certificate introduces INNER JOIN and LEFT JOIN. Understand conceptually what each returns.</p>
+<div class="highlight-box">
+<pre style="font-family: monospace; font-size: 0.9rem; margin:0;">
+-- INNER JOIN: only matching rows from both tables
+SELECT o.order_id, c.customer_name, o.order_total
+FROM orders o
+INNER JOIN customers c ON o.customer_id = c.customer_id;
+
+-- LEFT JOIN: all rows from left table, matching from right
+SELECT c.customer_name, o.order_id
+FROM customers c
+LEFT JOIN orders o ON c.customer_id = o.customer_id;
+</pre>
+</div>
+<h2 id="common-sql-mistakes-to-avoid">Common SQL Mistakes to Avoid</h2>
+<p>The mistakes that cost students the most points: forgetting WHERE vs. HAVING, writing GROUP BY after WHERE but before ORDER BY, using COUNT(*) when COUNT(column_name) is needed to exclude NULLs, and aliases that don't carry through to HAVING clauses in some SQL dialects.</p>
+<p>Practice these queries in BigQuery or SQLiteOnline.com until they feel instinctive, not calculated.</p>
+
+
+        <!-- AD SLOT BOTTOM OF POST -->
+        <div class="ad-slot ad-slot-leaderboard" style="margin-top: 40px;">Advertisement</div>
+
+        <!-- RELATED ARTICLES -->
+        <div style="margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--light-gray);">
+          <h3 style="margin-bottom: 20px;">Continue Reading</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; font-size:0.93rem;">
+            <a href="google-data-analytics-certificate-complete-guide.html" style="background:var(--off-wh); padding:16px; border-radius:8px; color:var(--navy); display:block; border:1px solid var(--light-gray);">📊 Complete Certificate Guide →</a>
+            <a href="google-data-analytics-certificate-sql-guide.html" style="background:var(--off-wh); padding:16px; border-radius:8px; color:var(--navy); display:block; border:1px solid var(--light-gray);">🛢️ SQL Practice Guide →</a>
+            <a href="gda-study-plan.html" style="background:var(--off-wh); padding:16px; border-radius:8px; color:var(--navy); display:block; border:1px solid var(--light-gray);">📅 Week-by-Week Study Plan →</a>
+            <a href="../quiz/index.html" style="background:var(--teal-lt); padding:16px; border-radius:8px; color:var(--teal-dk); display:block; border:1px solid rgba(0,194,168,0.2);">🧠 Take the Free Practice Quiz →</a>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="post-sidebar">
+
+        <div class="sidebar-cta-box">
+          <div style="font-size:2rem; margin-bottom:10px;">📘</div>
+          <h4>Complete Study Guide</h4>
+          <p>120+ pages covering all 8 GDA courses, 100 practice questions, SQL reference, and resume templates.</p>
+          <a href="../study-guide/index.html" class="btn btn-gold" style="width:100%;text-align:center;">Get It — $29 →</a>
+          <p style="font-size:0.75rem; color:rgba(255,255,255,0.45); margin-top:8px;">30-day money-back guarantee</p>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4>📋 In This Article</h4>
+          <ul class="toc-list">
+            <li><a href="#sql-concepts-tested-in-the-gda-certificate">SQL Concepts Tested in the GDA Certificate</a></li>
+<li><a href="#practice-basic-select-queries">Practice: Basic SELECT Queries</a></li>
+<li><a href="#practice-aggregations-and-group-by">Practice: Aggregations and GROUP BY</a></li>
+<li><a href="#practice-joins">Practice: JOINs</a></li>
+<li><a href="#common-sql-mistakes-to-avoid">Common SQL Mistakes to Avoid</a></li>
+
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4>🧠 Test Your Knowledge</h4>
+          <p style="font-size:0.88rem; color:var(--gray); margin-bottom:14px;">Take our free 25-question practice quiz and get your results emailed with a personalized study guide.</p>
+          <a href="../quiz/index.html" class="btn" style="width:100%;text-align:center;font-size:0.9rem;">Start Free Quiz →</a>
+        </div>
+
+        <!-- SIDEBAR AD -->
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXXXX" style="display:block;" data-ad-format="auto"></ins> -->
+        <div class="ad-slot ad-slot-rectangle">Advertisement</div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-capture">
+  <div class="container text-center">
+    <h2>Get Your Free GDA Study Checklist</h2>
+    <p>Join 4,000+ learners — weekly study tips, SQL practice, and career advice delivered free.</p>
+    <form class="email-form email-capture-form" style="justify-content:center;">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit" class="btn btn-gold">Send My Checklist →</button>
+    </form>
+    <p class="email-privacy">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <p>© 2025 GDACertPrep.com · Not affiliated with Google or Coursera.</p>
+      <div style="display:flex;gap:20px;"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
