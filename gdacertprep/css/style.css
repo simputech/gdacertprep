@@ -278,7 +278,7 @@ strong { font-weight: 600; }
 .sg-product-box .price-original { font-size: 1rem; color: var(--gray); text-decoration: line-through; margin-left: 8px; font-weight: 400; }
 .sg-product-box .price-row { display: flex; align-items: baseline; gap: 0; margin: 12px 0 20px; }
 .sg-includes { list-style: none; padding: 0; margin: 20px 0 28px; }
-.sg-includes li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--light-gray); font-size: 0.93rem; }
+.sg-includes li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--light-gray); font-size: 0.93rem; color: var(--text); }
 .sg-includes li:last-child { border-bottom: none; }
 .sg-includes .check { color: var(--teal); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
 .sg-left { flex: 1; }
