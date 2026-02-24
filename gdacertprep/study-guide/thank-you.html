@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Study Guide Is Ready! | GDACertPrep</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .confetti-wrap {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 10px; height: 10px;
+      top: -20px;
+      animation: confetti-fall linear forwards;
+      border-radius: 2px;
+    }
+    @keyframes confetti-fall {
+      0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+    .download-card {
+      background: linear-gradient(135deg, var(--navy), #0d3a60);
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(11,31,58,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .download-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(0,194,168,0.15) 0%, transparent 70%);
+    }
+    .pulse-icon {
+      font-size: 4rem;
+      animation: pulse 2s ease-in-out infinite;
+      display: block;
+      margin-bottom: 16px;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--font-d);
+      font-weight: 800;
+      font-size: 1.15rem;
+      padding: 18px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin: 24px 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .download-btn:hover {
+      background: var(--gold-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245,197,66,0.35);
+      text-decoration: none;
+      color: var(--navy);
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin: 28px 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist .ck { color: var(--teal); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+    .next-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .next-step-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      text-align: left;
+      border-top: 3px solid var(--teal);
+    }
+    .next-step-num {
+      font-family: var(--font-d);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .next-step-card h3 { font-size: 1rem; margin-bottom: 6px; }
+    .next-step-card p { font-size: 0.87rem; color: var(--gray); margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- Confetti container -->
+<div class="confetti-wrap" id="confetti"></div>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="../index.html" class="nav-logo">GDA<span>Cert</span>Prep</a>
+      <ul class="nav-links">
+        <li><a href="../blog/index.html">Study Blog</a></li>
+        <li><a href="../quiz/index.html">Practice Quiz</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <nav class="nav-mobile">
+    <a href="../index.html">Home</a>
+    <a href="../blog/index.html">Study Blog</a>
+    <a href="../quiz/index.html">Practice Quiz</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="background: var(--teal-lt); padding: 56px 0 40px; text-align: center;">
+  <div class="container">
+    <span class="badge">Purchase Complete</span>
+    <h1 style="margin-top: 10px; color: var(--navy);">Your Study Guide Is Ready! 🎉</h1>
+    <p style="color: var(--gray); max-width: 500px; margin: 12px auto 0; font-size: 1.05rem;">
+      Thank you for your purchase. Your PDF is ready to download below — and a copy is on its way to your email.
+    </p>
+  </div>
+</section>
+
+<!-- DOWNLOAD CARD -->
+<section class="section" style="padding-top: 48px;">
+  <div class="container">
+    <div class="download-card">
+      <span class="pulse-icon">📘</span>
+      <h2 style="color: var(--white); font-size: 1.6rem; margin-bottom: 6px;">GDA Complete Study Guide</h2>
+      <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 0;">120+ pages · 8 chapters · 100 practice questions · Bonus SQL & Spreadsheet references</p>
+
+      <a href="../downloads/GDA-Complete-Study-Guide.pdf"
+         download="GDA-Complete-Study-Guide.pdf"
+         class="download-btn">
+        ⬇ Download Your PDF Now
+      </a>
+
+      <p style="color: rgba(255,255,255,0.45); font-size: 0.8rem; margin: 0;">
+        Having trouble? Email <a href="mailto:hello@gdacertprep.com" style="color: var(--teal);">hello@gdacertprep.com</a>
+      </p>
+
+      <ul class="checklist">
+        <li><span class="ck">✓</span> 8 full course chapter guides — Foundations through Capstone</li>
+        <li><span class="ck">✓</span> SQL reference with 30+ practice queries and examples</li>
+        <li><span class="ck">✓</span> Spreadsheet formula cheat sheet — every formula you'll be tested on</li>
+        <li><span class="ck">✓</span> 100 practice questions with full answer explanations</li>
+        <li><span class="ck">✓</span> Capstone project template and data analyst resume guide</li>
+        <li><span class="ck">✓</span> Lifetime access — bookmark this page or save the PDF</li>
+      </ul>
+
+      <div style="background: rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.55);">
+        💡 <strong style="color: rgba(255,255,255,0.8);">Pro tip:</strong> Save the PDF to Google Drive or iCloud so you can access it on any device — phone, tablet, or laptop — while you study.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO DO NEXT -->
+<section class="section" style="padding-top: 40px; background: var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">Your Study Roadmap</span>
+      <h2 style="margin-top: 8px;">How to Get the Most From Your Guide</h2>
+      <p style="color: var(--gray); max-width: 520px; margin: 10px auto 0;">Follow these steps to maximize your study time and pass the certificate with confidence.</p>
+    </div>
+    <div class="next-steps">
+      <div class="next-step-card">
+        <div class="next-step-num">Step 01</div>
+        <h3>Take the Practice Quiz</h3>
+        <p>Start with our free 25-question quiz to identify your weakest areas before you dive into the guide.</p>
+        <a href="../quiz/index.html" class="btn btn-sm" style="margin-top: 14px; display: inline-block;">Take the Quiz →</a>
+      </div>
+      <div class="next-step-card">
+        <div class="next-step-num">Step 02</div>
+        <h3>Work Through Chapter by Chapter</h3>
+        <p>Study each chapter alongside the corresponding Coursera course. Don't skip the practice questions at the end of each chapter.</p>
+      </div>
+      <div class="next-step-card">
+        <div class="next-step-num">Step 03</div>
+        <h3>Practice SQL Daily</h3>
+        <p>Use the SQL reference sheet to practice queries every day. SQLiteOnline.com lets you run queries instantly with no setup.</p>
+      </div>
+      <div class="next-step-card">
+        <div class="next-step-num">Step 04</div>
+        <h3>Build Your Capstone</h3>
+        <p>Use the capstone template in Chapter 8 to structure your case study. Start it while you're in Course 7 — don't wait until Course 8.</p>
+      </div>
+      <div class="next-step-card">
+        <div class="next-step-num">Step 05</div>
+        <h3>Apply and Get Hired</h3>
+        <p>Use the resume guide and LinkedIn tips in Chapter 8 the moment you complete the certificate. Don't wait — apply immediately.</p>
+      </div>
+      <div class="next-step-card" style="border-top-color: var(--gold);">
+        <div class="next-step-num" style="color: var(--gold-dk);">Questions?</div>
+        <h3>We're Here to Help</h3>
+        <p>If you have any questions about the guide or the certificate, email us any time.</p>
+        <a href="mailto:hello@gdacertprep.com" class="btn btn-sm btn-outline" style="margin-top: 14px; display: inline-block;">Email Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE RESOURCES -->
+<section style="background: var(--off-wh); padding: 48px 0;">
+  <div class="container text-center">
+    <h2>Keep Learning — Free Resources</h2>
+    <p style="color: var(--gray); margin: 10px auto 28px; max-width: 480px;">Everything on the blog is free. Bookmark the SQL guide and spreadsheet skills article — you'll come back to them throughout the certificate.</p>
+    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <a href="../blog/google-data-analytics-certificate-sql-guide.html" class="btn btn-outline">SQL Practice Guide →</a>
+      <a href="../blog/google-data-analytics-spreadsheet-skills.html" class="btn btn-outline">Spreadsheet Skills →</a>
+      <a href="../quiz/index.html" class="btn btn-gold">Take the Free Quiz →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE — get them on the list post-purchase -->
+<section class="email-capture">
+  <div class="container text-center">
+    <h2>Get Weekly Study Tips in Your Inbox</h2>
+    <p>SQL practice problems, study strategies, and career advice for GDA Certificate learners — delivered free every week.</p>
+    <form class="email-form email-capture-form" style="justify-content: center;">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit" class="btn btn-gold">Subscribe Free →</button>
+    </form>
+    <p class="email-privacy">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+      <p>© 2025 GDACertPrep.com · Not affiliated with Google or Coursera.</p>
+      <div style="display:flex; gap: 20px;">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  // Confetti animation on load
+  const colors = ['#00c2a8','#f5c542','#0b1f3a','#ffffff','#009e88'];
+  const container = document.getElementById('confetti');
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.cssText = `
+      left: ${Math.random() * 100}%;
+      background: ${colors[Math.floor(Math.random() * colors.length)]};
+      width: ${6 + Math.random() * 8}px;
+      height: ${6 + Math.random() * 8}px;
+      animation-duration: ${2 + Math.random() * 3}s;
+      animation-delay: ${Math.random() * 1.5}s;
+      border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+    `;
+    container.appendChild(piece);
+  }
+  // Remove confetti after animation
+  setTimeout(() => container.remove(), 6000);
+</script>
+</body>
+</html>
