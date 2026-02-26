@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Visualization for the Google Data Analytics Certificate (Course 6) | GDACertPrep</title>
+  <meta name="description" content="Learn exactly what Course 6 expects: chart selection, Tableau Public basics, dashboard design, and data storytelling — plus worked Tableau examples and dashboard mockups." />
+  <link rel="canonical" href="https://gdacertprep.com/blog/data-visualization-guide.html" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Optional: lightweight styles for inline dashboard mockups (no external assets) -->
+  <style>
+    .callout { background: var(--off-wh); border:1px solid var(--light-gray); border-left:4px solid var(--teal); padding:16px 18px; border-radius:10px; margin: 18px 0 28px; }
+    .callout strong { color: var(--navy); }
+    .mini-kpi-row { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin: 14px 0 18px; }
+    .mini-kpi { background:#fff; border:1px solid var(--light-gray); border-radius:10px; padding:12px; }
+    .mini-kpi .label { font-size: 0.78rem; color: var(--gray); margin-bottom: 6px; }
+    .mini-kpi .value { font-size: 1.25rem; font-weight: 700; color: var(--navy); }
+    .dash-mock { background:#fff; border:1px solid var(--light-gray); border-radius:12px; padding:14px; margin: 14px 0 18px; }
+    .dash-grid { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:12px; }
+    .dash-panel { border:1px dashed rgba(0,0,0,0.18); border-radius:10px; padding:12px; background: var(--off-wh); }
+    .dash-panel h4 { margin: 0 0 8px; font-size: 0.95rem; color: var(--navy); }
+    .dash-panel p { margin: 0; font-size: 0.86rem; color: var(--gray); }
+    .steps { background: var(--off-wh); border:1px solid var(--light-gray); border-radius:12px; padding: 16px; }
+    .steps ol { margin: 0; padding-left: 18px; }
+    .steps li { margin: 8px 0; }
+    .faq { margin-top: 36px; padding-top: 28px; border-top: 2px solid var(--light-gray); }
+    .faq details { background:#fff; border:1px solid var(--light-gray); border-radius:10px; padding: 12px 14px; margin: 10px 0; }
+    .faq summary { cursor:pointer; font-weight: 700; color: var(--navy); }
+    .verify-note { font-size: 0.88rem; color: var(--gray); margin-top: 22px; }
+  </style>
+
+  <!-- Google Ads slot -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="../index.html" class="nav-logo">GDA<span>Cert</span>Prep</a>
+      <ul class="nav-links">
+        <li><a href="../blog/index.html">Study Blog</a></li>
+        <li><a href="../quiz/index.html">Practice Quiz</a></li>
+        <li><a href="../study-guide/index.html">Study Guide</a></li>
+        <li><a href="../study-guide/index.html" class="btn btn-sm btn-gold">Study Guide — $29</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <nav class="nav-mobile">
+    <a href="../index.html">Home</a>
+    <a href="../blog/index.html">Study Blog</a>
+    <a href="../quiz/index.html">Practice Quiz</a>
+    <a href="../study-guide/index.html" class="btn btn-gold">Study Guide — $29</a>
+  </nav>
+</header>
+
+<section class="blog-post-header">
+  <div class="container-narrow">
+    <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="index.html">Blog</a> <span>›</span> Visualization</div>
+    <h1>Data Visualization for the Google Data Analytics Certificate (Course 6): What You Actually Need to Know</h1>
+    <div class="blog-post-meta">
+      <span>📅 Updated 2026</span>
+      <span>⏱ 12–14 min read</span>
+      <span>📂 Visualization</span>
+    </div>
+  </div>
+</section>
+
+<section class="post-content">
+  <div class="container">
+    <div class="post-layout">
+
+      <!-- MAIN CONTENT -->
+      <article class="post-body">
+
+        <!-- AD SLOT TOP OF POST -->
+        <!-- <ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+        <div class="ad-slot ad-slot-leaderboard" style="margin-bottom: 32px;">Advertisement</div>
+
+        <div class="callout">
+          <strong>Quick answer (the search intent):</strong> Course 6 of the Google Data Analytics Certificate expects you to (1) choose the right chart for the analytical goal, (2) build core views in <strong>Tableau Public</strong>, (3) assemble a clear dashboard, and (4) present one or two stakeholder-ready insights with minimal clutter.
+        </div>
+
+        <p class="fade-up" style="font-size:1.06rem; font-weight:300; color:#4a5a6a; border-left:4px solid var(--teal); padding-left:18px; margin-bottom:28px;">
+          Data visualization shows up heavily in <strong>Course 6 (Share Data Through the Art of Visualization)</strong>. If you're studying for quizzes or the final project, this guide focuses on what you’ll actually do: chart selection, Tableau Public basics, dashboard layout, and storytelling — with worked Tableau examples and annotated dashboard mockups you can copy.
+        </p>
+
+        <h2 id="what-course-6-expects">What Course 6 Actually Expects You to Do</h2>
+        <p>Course 6 isn't about memorizing chart definitions. It tests whether you can match a business question to the right visual, build it in Tableau Public, and communicate an insight clearly.</p>
+        <ul>
+          <li><strong>Chart selection:</strong> pick a chart based on the goal (trend, comparison, distribution, relationship).</li>
+          <li><strong>Tableau mechanics:</strong> connect data, drag dimensions/measures, change Marks, add filters, use tooltips.</li>
+          <li><strong>Dashboard building:</strong> combine multiple views, keep layout readable, guide the eye.</li>
+          <li><strong>Storytelling:</strong> lead with the insight, not the method; write titles that state what the data means.</li>
+        </ul>
+
+        <h2 id="chart-selection-cheat-sheet">Choosing the Right Chart Type (Certificate-Style Scenarios)</h2>
+        <p>This is a common quiz pattern: you’re given a dataset + goal, and you must choose the best chart.</p>
+
+        <table>
+          <thead><tr><th>Goal (what the question is asking)</th><th>Best Chart</th><th>When it’s wrong</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Compare categories (e.g., revenue by product line)</td>
+              <td><strong>Bar / Column</strong></td>
+              <td>Wrong if you’re showing a time trend</td>
+            </tr>
+            <tr>
+              <td>Show change over time (weekly sales, monthly users)</td>
+              <td><strong>Line</strong></td>
+              <td>Wrong if the x-axis isn’t time</td>
+            </tr>
+            <tr>
+              <td>Show distribution (session length, order size)</td>
+              <td><strong>Histogram</strong></td>
+              <td>Wrong if you need exact category comparison</td>
+            </tr>
+            <tr>
+              <td>Show relationship (ad spend vs revenue)</td>
+              <td><strong>Scatter</strong></td>
+              <td>Wrong if you’re comparing a few categories</td>
+            </tr>
+            <tr>
+              <td>Show part-to-whole (small number of segments)</td>
+              <td><strong>Pie / Donut</strong> (use sparingly)</td>
+              <td>Wrong when there are many segments or close values</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 id="fast-chart-logic">A fast way to choose: “What is the x-axis?”</h3>
+        <ul>
+          <li>If the x-axis is <strong>time</strong> → start with a <strong>line chart</strong>.</li>
+          <li>If the x-axis is <strong>categories</strong> → start with a <strong>bar chart</strong>.</li>
+          <li>If each dot is an <strong>observation</strong> and you’re checking a relationship → <strong>scatter plot</strong>.</li>
+          <li>If you're asking “how is this spread out?” → <strong>histogram</strong>.</li>
+        </ul>
+
+        <h2 id="tableau-public-basics">Tableau Public Basics You Need for the Certificate</h2>
+        <p>The certificate uses <strong>Tableau Public</strong> (free). You don’t need advanced features — you do need to be comfortable building views quickly.</p>
+
+        <h3 id="core-workflow">The core workflow you should be able to do without thinking</h3>
+        <div class="steps">
+          <ol>
+            <li><strong>Connect data</strong> (CSV or similar).</li>
+            <li><strong>Pick a dimension + measure</strong> (e.g., Region + Revenue).</li>
+            <li>Drag fields to <strong>Rows</strong>/<strong>Columns</strong>.</li>
+            <li>Use the <strong>Marks</strong> card to change chart type and encoding (Color / Size / Label).</li>
+            <li>Add a <strong>filter</strong> that a stakeholder would actually use (Date, Region, Segment).</li>
+            <li>Clean up readability: sort, format numbers, tighten labels.</li>
+          </ol>
+        </div>
+
+        <p><strong>What you can ignore for now:</strong> LOD expressions, complex table calculations, advanced parameter actions. If you’re still learning, these will slow you down more than they help.</p>
+
+        <h2 id="worked-example-1">Worked Tableau Example #1: Category Comparison + Trend (Two Views, One Dashboard)</h2>
+        <p>This is the kind of build that maps to Course 6 practice and the final project: one view to explain “what,” one to explain “when.”</p>
+
+        <div class="dash-mock">
+          <div class="mini-kpi-row">
+            <div class="mini-kpi"><div class="label">Total Revenue</div><div class="value">$1.28M</div></div>
+            <div class="mini-kpi"><div class="label">Best Region</div><div class="value">West</div></div>
+            <div class="mini-kpi"><div class="label">MoM Change</div><div class="value">-6.4%</div></div>
+            <div class="mini-kpi"><div class="label">Top Product</div><div class="value">Accessories</div></div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="dash-panel">
+              <h4>View A — Revenue by Category (Bar)</h4>
+              <p><strong>Purpose:</strong> identify which categories drive results.<br/>
+                 <strong>Build:</strong> Category (dimension) + Revenue (measure), sorted descending.</p>
+            </div>
+            <div class="dash-panel">
+              <h4>View B — Revenue Over Time (Line)</h4>
+              <p><strong>Purpose:</strong> show trend + detect a drop/spike.<br/>
+                 <strong>Build:</strong> Month (date) + Revenue, add a filter for Region.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 id="how-to-build-example-1">How to build it in Tableau Public (step-by-step)</h3>
+        <div class="steps">
+          <ol>
+            <li>Create <strong>Sheet 1</strong>: drag <strong>Category</strong> to Rows and <strong>Revenue</strong> to Columns → set Marks to <strong>Bar</strong> → sort descending.</li>
+            <li>Create <strong>Sheet 2</strong>: drag <strong>Order Date</strong> to Columns (set to Month) and <strong>Revenue</strong> to Rows → set Marks to <strong>Line</strong>.</li>
+            <li>Add <strong>Region</strong> as a filter on both sheets → “Apply to Worksheets” (so one filter controls both views).</li>
+            <li>Create a <strong>Dashboard</strong>: place Sheet 1 left and Sheet 2 right. Keep titles short and insight-led.</li>
+            <li>Finish: format revenue as currency, limit gridlines, and rename titles to state the takeaway (e.g., “Accessories Lead Revenue; Overall Trend Declining Since October”).</li>
+          </ol>
+        </div>
+
+        <h3 id="annotation-what-graders-look-for">What graders (and stakeholders) look for</h3>
+        <ul>
+          <li><strong>Titles state meaning</strong>, not labels (avoid “Revenue by Category”).</li>
+          <li><strong>One dashboard purpose</strong> (don’t cram 6 views into one page).</li>
+          <li><strong>Filters are intentional</strong> (only include filters a decision-maker would actually use).</li>
+        </ul>
+
+        <h2 id="worked-example-2">Worked Tableau Example #2: Scatter Plot + Trend Line (Relationship Questions)</h2>
+        <p>Course quizzes often ask: “Which chart shows correlation?” This is what that looks like in a real Tableau build.</p>
+
+        <div class="dash-mock">
+          <div class="dash-panel">
+            <h4>View — Ad Spend vs Revenue (Scatter)</h4>
+            <p><strong>Build:</strong> Ad Spend on Columns, Revenue on Rows, add a mark for each campaign (Campaign ID).<br/>
+              <strong>Add:</strong> a trend line to show direction (positive/negative) and strength (tight/loose clustering).</p>
+          </div>
+        </div>
+
+        <h3 id="interpretation">How to explain it in one sentence</h3>
+        <p>If your stakeholder can’t summarize the relationship in one sentence, the chart is doing too much. Example:</p>
+        <blockquote>“Campaigns with higher spend generally drive higher revenue, but there are outliers — we should investigate the high-spend / low-revenue campaigns first.”</blockquote>
+
+        <h2 id="dashboard-design-rules">Dashboard Design Rules That Show Up in the Certificate</h2>
+        <p>These rules are simple, but they’re exactly what peer reviews and rubric scoring reward:</p>
+        <ul>
+          <li><strong>Lead with the insight:</strong> headline should say what changed or what matters.</li>
+          <li><strong>Remove chart junk:</strong> heavy gridlines, unnecessary decimals, cluttered legends.</li>
+          <li><strong>Consistency:</strong> if a color means “bad” in one chart, it should mean “bad” everywhere.</li>
+          <li><strong>One screen:</strong> dashboards should fit without scrolling on a typical laptop.</li>
+        </ul>
+
+        <h2 id="common-mistakes">Common Mistakes (and How to Fix Them Fast)</h2>
+        <ul>
+          <li><strong>Mistake:</strong> Too many charts in one dashboard. <strong>Fix:</strong> Keep 2–3 views max for one narrative.</li>
+          <li><strong>Mistake:</strong> Neutral titles (“Sales Dashboard”). <strong>Fix:</strong> Make titles insight-led (“Sales Down 12% After Price Change”).</li>
+          <li><strong>Mistake:</strong> Pie charts with many slices. <strong>Fix:</strong> Use bars with sorted categories.</li>
+          <li><strong>Mistake:</strong> No filters or irrelevant filters. <strong>Fix:</strong> Add 1–2 filters a stakeholder would use (Date, Region, Segment).</li>
+        </ul>
+
+        <h2 id="study-plan">How to Study Visualization for the GDA Certificate (Efficiently)</h2>
+        <p>If you only have a few hours, focus on skills that transfer to quizzes <em>and</em> the final project:</p>
+        <ol>
+          <li>Memorize the <strong>chart selection cheat sheet</strong> above.</li>
+          <li>Practice building the two worked examples in Tableau Public (bar+line dashboard, scatter + trend line).</li>
+          <li>Rewrite titles to be <strong>insight-led</strong> instead of descriptive.</li>
+          <li>Run a 2-minute “cleanup pass”: format numbers, reduce gridlines, align spacing.</li>
+        </ol>
+
+        <p class="verify-note">
+          <strong>Verification note:</strong> Certificate course sequencing and visualization focus are based on the official Google Data Analytics Professional Certificate overview on Coursera (as of February 2026). Details can change — confirm on Coursera before you start.
+        </p>
+
+        <!-- CONVERSION CTA (IN-CONTENT) -->
+        <div style="margin-top: 34px; padding: 18px; border-radius: 12px; border: 1px solid var(--light-gray); background: var(--off-wh);">
+          <h3 style="margin:0 0 10px;">Want the fastest way to cover all 8 courses?</h3>
+          <p style="margin:0 0 14px; color: var(--gray);">
+            The <strong>GDACertPrep Complete Study Guide</strong> includes data visualization checklists, Tableau workflows, SQL reference sheets, portfolio templates, and 100 practice questions — organized exactly like the certificate.
+          </p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="../study-guide/index.html" class="btn btn-gold">Get the Study Guide — $29 →</a>
+            <a href="../quiz/index.html" class="btn">Take the Free Practice Quiz →</a>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq" id="faq">
+          <h2>FAQ — Data Visualization for the Google Data Analytics Certificate</h2>
+
+          <details>
+            <summary>Do I need to learn advanced Tableau features for the certificate?</summary>
+            <p>No. Focus on connecting data, building core charts (bar/line/scatter), adding filters, tooltips, and assembling dashboards. Advanced features (LOD expressions, complex table calcs) are not required for most learners at the certificate level.</p>
+          </details>
+
+          <details>
+            <summary>What chart types are most important to remember?</summary>
+            <p>Bar (category comparison), line (time trend), histogram (distribution), scatter (relationship/correlation). Know the “when it’s wrong” cases so you don’t get trapped by close-answer quiz options.</p>
+          </details>
+
+          <details>
+            <summary>How do I improve my peer review score on dashboards?</summary>
+            <p>Use insight-led titles, keep dashboards to 2–3 views, add 1–2 stakeholder-relevant filters, and format for readability (currency, fewer decimals, reduced gridlines). Clarity beats complexity.</p>
+          </details>
+        </div>
+
+        <!-- AD SLOT BOTTOM OF POST -->
+        <div class="ad-slot ad-slot-leaderboard" style="margin-top: 40px;">Advertisement</div>
+
+        <!-- RELATED ARTICLES -->
+        <div style="margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--light-gray);">
+          <h3 style="margin-bottom: 20px;">Continue Reading</h3>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; font-size:0.93rem;">
+            <a href="google-data-analytics-certificate-complete-guide.html" style="background:var(--off-wh); padding:16px; border-radius:8px; color:var(--navy); display:block; border:1px solid var(--light-gray);">📊 Complete Certificate Guide →</a>
+            <a href="google-data-analytics-certificate-sql-guide.html" style="background:var(--off-wh); padding:16px; border-radius:8px; color:var(--navy); display:block; border:1px solid var(--light-gray);">🛢️ SQL Practice Guide →</a>
+            <a href="data-cleaning-guide.html" style="background:var(--off-wh); padding:16px; border-radius:8px; color:var(--navy); display:block; border:1px solid var(--light-gray);">🧼 Data Cleaning Guide →</a>
+            <a href="google-data-analytics-certificate-capstone-project.html" style="background:var(--off-wh); padding:16px; border-radius:8px; color:var(--navy); display:block; border:1px solid var(--light-gray);">📁 Capstone Tips & Examples →</a>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="post-sidebar">
+
+        <div class="sidebar-cta-box">
+          <div style="font-size:2rem; margin-bottom:10px;">📘</div>
+          <h4>Complete Study Guide</h4>
+          <p>120+ pages covering all 8 GDA courses, 100 practice questions, SQL reference, and resume templates.</p>
+          <a href="../study-guide/index.html" class="btn btn-gold" style="width:100%;text-align:center;">Get It — $29 →</a>
+          <p style="font-size:0.75rem; color:rgba(255,255,255,0.45); margin-top:8px;">30-day money-back guarantee</p>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4>📋 In This Article</h4>
+          <ul class="toc-list">
+            <li><a href="#what-course-6-expects">What Course 6 Actually Expects You to Do</a></li>
+            <li><a href="#chart-selection-cheat-sheet">Choosing the Right Chart Type</a></li>
+            <li><a href="#tableau-public-basics">Tableau Public Basics</a></li>
+            <li><a href="#worked-example-1">Worked Tableau Example #1</a></li>
+            <li><a href="#worked-example-2">Worked Tableau Example #2</a></li>
+            <li><a href="#dashboard-design-rules">Dashboard Design Rules</a></li>
+            <li><a href="#common-mistakes">Common Mistakes</a></li>
+            <li><a href="#study-plan">How to Study Efficiently</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4>🧠 Test Your Knowledge</h4>
+          <p style="font-size:0.88rem; color:var(--gray); margin-bottom:14px;">Take our free 25-question practice quiz and get your results emailed with a personalized study guide.</p>
+          <a href="../quiz/index.html" class="btn" style="width:100%;text-align:center;font-size:0.9rem;">Start Free Quiz →</a>
+        </div>
+
+        <!-- SIDEBAR AD -->
+        <div class="ad-slot ad-slot-rectangle">Advertisement</div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-capture">
+  <div class="container text-center">
+    <h2>Get Your Free GDA Study Checklist</h2>
+    <p>Join 4,000+ learners — weekly study tips, SQL practice, and career advice delivered free.</p>
+    <form class="email-form email-capture-form" style="justify-content:center;">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit" class="btn btn-gold">Send My Checklist →</button>
+    </form>
+    <p class="email-privacy">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <p>© 2026 GDACertPrep.com · Not affiliated with Google or Coursera.</p>
+      <div style="display:flex;gap:20px;"><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a><a href="../sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
